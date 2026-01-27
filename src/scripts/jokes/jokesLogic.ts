@@ -1,13 +1,19 @@
 import { getData } from "../asyncronApiCall.js";
 import type { joke, reportedJoke } from "../interfaces.js";
 
-export const dadJokesRequest = new Request('https://icanhazdadjoke.com/', {
-  headers: { "Accept": "application/json" }
-});
+export async function newJoke(firstApi:Request, secondApi:Request):Promise<joke> {
+    const randomNumber = Math.round(Math.random())
+    const randomRequest = randomNumber === 0 ? firstApi : secondApi;
 
-export async function newJoke():Promise<joke> {
-    const jokeData = await getData(dadJokesRequest);
-    let joke = jokeData.joke
+    const jokeData = await getData(randomRequest);
+    let joke: string;
+
+    if (randomNumber === 0) {
+        joke = jokeData.joke;
+    } else {
+        joke = jokeData.value;
+    }
+    if (!joke) throw new Error("Invalid joke data");
     return {joke: joke}
 }
 
