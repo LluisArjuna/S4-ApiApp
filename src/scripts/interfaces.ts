@@ -8,3 +8,8 @@ export interface reportedJoke {
   date: string;
 }
 
+export interface weather {
+  temperature: number;
+  icon: string;
+  description: string;
+}
