@@ -6,18 +6,27 @@
     <title>Acudits</title>
 </head>
 <body>
-    <h1>Acudits del dia</h1>
-    <p id="joke">Carregant acudit...</p>
-    <section>
-        <article>
-            <button id="score_1">1</button>
-            <button id="score_2">2</button>
-            <button id="score_3">3</button>
-        </article>
-        <button id="next-joke">Següent acudit</button>
-    </section>
-    
+    <nav>
+        <ul>
+            <li id="temperature"></li>
+            <img id="icon" src="" alt="">
+            <li id="description"></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Acudits del dia</h1>
+        <p id="joke">Carregant acudit...</p>
+        <section>
+            <article>
+                <button id="score_1">1</button>
+                <button id="score_2">2</button>
+                <button id="score_3">3</button>
+            </article>
+            <button id="next-joke">Següent acudit</button>
+        </section>
+        
+        <script type="module" src="./dist/scripts/index.js"></script>
+    </main>
 
-    <script type="module" src="./dist/scripts/index.js"></script>
 </body>
 </html>
