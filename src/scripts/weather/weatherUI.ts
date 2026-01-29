@@ -6,7 +6,7 @@ const desc = document.getElementById('description') as HTMLParagraphElement;
 
 export function showWeather (weather:weather) {
     try {
-        temp.textContent = String(weather.temperature);
+        temp.textContent = `${String(weather.temperature)} ºC`;
         icon.src = weather.icon;
         icon.alt = weather.description;
         desc.textContent = weather.description;
