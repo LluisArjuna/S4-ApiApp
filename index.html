@@ -4,29 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Acudits</title>
+    <link href="./src/styles/output.css" rel="stylesheet">
+
 </head>
-<body>
-    <nav>
-        <ul>
-            <li id="temperature"></li>
-            <img id="icon" src="" alt="">
-            <li id="description"></li>
+<body class="min-h-screen bg-white flex flex-col items-center">
+    <nav class="w-full flex items-center gap-2 px-6 py-2 text-sm border-b border-cyan-500/30">
+        <ul class="flex flex-row items-center">
+            <li id="temperature" class="font-semibold"></li>
+            <img id="icon" src="" alt="" class="w-16 h-16">
+            <li id="description" class="text-gray-500"></li>
         </ul>
     </nav>
-    <main>
-        <h1>Acudits del dia</h1>
-        <p id="joke">Carregant acudit...</p>
-        <section>
-            <article>
-                <button id="score_1">1</button>
-                <button id="score_2">2</button>
-                <button id="score_3">3</button>
+    <main class="container min-w-screen flex-1 flex items-center justify-center">
+        <section class="relative flex flex-col justify-center items-center text-center p-10">
+            <h1 class="text-4xl md:text-5xl xl:text-6xl font-semibold max-w-3xl mx-auto mb-16">Preparat per riure?</h1>
+            <p id="joke" class="text-5x1 opacity-90 mb-6">Carregant acudit...</p>
+            <article class="flex gap-4 text-2xl mb-6">
+                <button id="score_1" class="hover:scale-125">😢</button>
+                <button id="score_2" class="hover:scale-125">😐</button>
+                <button id="score_3" class="hover:scale-125">😂</button>
             </article>
-            <button id="next-joke">Següent acudit</button>
+            <button id="next-joke" class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full shadow hover:scale-105 transition">Següent acudit</button>
         </section>
-        
-        <script type="module" src="./dist/scripts/index.js"></script>
     </main>
-
+    <script type="module" src="./dist/scripts/index.js"></script>
 </body>
 </html>
