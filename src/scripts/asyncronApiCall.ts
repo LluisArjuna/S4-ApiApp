@@ -1,15 +1,9 @@
-export async function getData(request: RequestInfo | URL) {
-  try {
-    const response = await fetch(request);
-    
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
+export async function getData<T>(request: RequestInfo | URL): Promise<T> {
+  const response = await fetch(request);
 
-    const result = await response.json();
-    return result;
-
-  } catch (error) {
-    console.error("Error: ",error);
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
   }
+
+  return response.json() as Promise<T>;
 }

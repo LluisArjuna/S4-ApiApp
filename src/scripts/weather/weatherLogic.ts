@@ -1,5 +1,6 @@
 import { getData } from "../asyncronApiCall.js";
-import type { weather } from "../interfaces.js";
+import type { Weather, OpenWeatherApiResponse} from "../interfaces.js";
+
 
 async function getCurrentLocation() {
     if (!navigator.geolocation) {
@@ -16,19 +17,16 @@ async function getCurrentLocation() {
 
 export const location = await getCurrentLocation();
 
-export async function getWeather(weatherApi:Request):Promise<weather> {
-    const weatherData = await getData(weatherApi);
+export async function getWeather(weatherApi:Request):Promise<Weather> {
+    const data = await getData<OpenWeatherApiResponse>(weatherApi);
     try {
         return {
-            temperature: weatherData.main.temp,
-            icon: `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`,
-            description: weatherData.weather[0].description,
+            temperature: data.main.temp,
+            icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+            description: data.weather[0].description,
         }
     } catch (error) {
         console.error("Error: ",error);
         throw (error);   
     }
 }
-
-
-
