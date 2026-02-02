@@ -1,10 +1,10 @@
-import type { weather } from "../interfaces";
+import type { Weather } from "../interfaces";
 
 const temp = document.getElementById('temperature') as HTMLParagraphElement;
 const icon = document.getElementById('icon') as HTMLImageElement;
 const desc = document.getElementById('description') as HTMLParagraphElement;
 
-export function showWeather (weather:weather) {
+export function showWeather (weather:Weather) {
     try {
         temp.textContent = `${String(weather.temperature)} ºC`;
         icon.src = weather.icon;

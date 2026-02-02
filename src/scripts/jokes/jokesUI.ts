@@ -1,11 +1,11 @@
-import type { joke } from "../interfaces";
+import type { Joke } from "../interfaces";
 
 const jokeElement = document.getElementById('joke') as HTMLParagraphElement;
 export const nextButton = document.getElementById('next-joke') as HTMLButtonElement;
 
 export let currentScore: number | null = null;
 
-export function showJoke (joke:joke) {
+export function showJoke (joke:Joke) {
     try {
         jokeElement.textContent = joke.joke;
         currentScore = null;
