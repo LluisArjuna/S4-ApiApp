@@ -22,7 +22,7 @@ await loadJoke();
 
 nextButton.addEventListener('click', async () => {
     voteJoke(currentScore, currentJoke);
-    loadJoke();
+    await loadJoke();
 });
 
 console.log(reportJokes);
