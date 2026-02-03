@@ -16,20 +16,29 @@ $ https://github.com/LluisArjuna/S4-ApiApp.git
 
 2. Installing dependencies
 
-```bash
-$ npm install
-$ npm install typescript --save-dev
-$ npx tsc --init
-$ npm install tailwindcss@4.1 postcss autoprefixer
-$ npx tailwindcss init -p
-$ npx tsc
-$ npm run dev
-```
+  2.1 Installing npm
+  ```bash
+  $ npm install
+  ```
+  2.2 Installing Typescript 
+  ```bash
+  $ npm install -D typescript
+  $ npx tsc --init
+  ```
+  2.3 Installing Tailwind and Initializing
+  ```bash
+  $ npm install tailwindcss@4.1 postcss autoprefixer
+  $ npx tailwindcss init -p
+  ```
+  2.4 Installing Vitest
+  ```bash
+  $ npm install -D vitest jsdom
+  $ npm install -D jsdom @vitest/ui
+  ```
 
 3. Runing Tests
 
 ```bash
-$ npm install -D vitest jsdom
 $ npx vitest --watch 
 ```
 
@@ -67,10 +76,10 @@ tests/
 
 ## Technologies Used
 
-HTML
-CSS
-TypeScript
-Tailwind
+HTML<br>
+CSS<br>
+TypeScript<br>
+Tailwind<br>
 Vitest
 
 <br>
